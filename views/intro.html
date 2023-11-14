@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NomNomNote</title>
+  <style>
+    body {
+      background-color: #FFCC00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .logo-container {
+      width: 50vw; /* 로고 컨테이너의 너비를 화면 너비의 80%로 설정 */
+      height: 50vw; /* 로고 컨테이너의 높이를 화면 너비의 80%로 설정 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border-radius: 50%; /* 동그란 모양을 만들기 위한 속성 */
+      overflow: hidden; /* 내용이 컨테이너를 벗어나지 않도록 설정 */
+    }
+    img {
+      width: 60%; /* 로고 이미지가 로고 컨테이너를 가득 채우도록 설정 */
+      height: auto;
+    }
+    button {
+      margin-top: 20px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="/logo.png" alt="로고 이미지">
+  </div>
+  <a href="/login">로그인하기</a>
+  <a href="/signup">회원가입하기</a>
+  <a href="/guest">비회원으로 시작하기</a>
+</body>
+</html>
