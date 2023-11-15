@@ -1,0 +1,18 @@
+.profile-container {
+  text-align: center;
+  margin: 12rem 10rem;
+  padding: 20px;
+}
+.profile-container svg {
+  width: 100px;
+  height: auto;
+}
+h2 {
+  margin-top: 1em;
+  color: #333;
+}
+p {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+}
