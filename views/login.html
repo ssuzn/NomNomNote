@@ -5,30 +5,20 @@
   <div class="join-container">
     <div class="join-content">
       <h2 class="join-title">
-        Sign Up
+        Log In
       </h2>
-      <form class="join-form" action="/auth/join" method="post">
+      <form class="join-form" action="/auth/login" method="post">
         <div class="join-input">
           <input type="email" name="email" placeholder="EMAIL" minlength="6" required>
         </div>
         <div class="join-input">
-          <input type="text" name="nick" placeholder="NICKNAME" required>
-        </div>
-        <div class="join-input">
           <input type="password" name="password" placeholder="PASSWORD" required>
         </div>
-        <button class="join-btn" type="submit">Sign Up</button>
+        <button class="join-btn" type="submit">Log in</button>
       </form>
     </div>
   </div>
 {% endblock %}
 
 {% block script %}
-<script>
-window.onload = () => {
-  if (new URL(location.href).searchParams.get('error')) {
-    alert('이미 존재하는 이메일입니다.');
-  }
-};
-</script>
 {% endblock %}
