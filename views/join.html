@@ -18,6 +18,7 @@
           <input type="password" name="password" placeholder="PASSWORD" required>
         </div>
         <button class="join-btn" type="submit">Sign Up</button>
+        <a href="/auth/kakao">start with kakaotalk &#129046;</a>
       </form>
     </div>
   </div>
@@ -27,7 +28,7 @@
 <script>
 window.onload = () => {
   if (new URL(location.href).searchParams.get('error')) {
-    alert('이미 존재하는 이메일입니다.');
+    alert('The email already exists.');
   }
 };
 </script>

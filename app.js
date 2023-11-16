@@ -5,18 +5,18 @@ const path = require('path');
 const session = require('express-session');
 const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
-// const passport = require('passport');
+const passport = require('passport');
 
 dotenv.config();
 const pageRouter = require('./routes/page');
-// const authRouter = require('./routes/auth');
+const authRouter = require('./routes/auth');
 // const postRouter = require('./routes/post');
 // const userRouter = require('./routes/user');
 const { sequelize } = require('./models');
-// const passportConfig = require('./passport');
+const passportConfig = require('./passport');
 
 const app = express();
-// passportConfig(); // 패스포트 설정
+passportConfig(); // 패스포트 설정
 app.set('port', process.env.PORT || 8001);
 app.set('view engine', 'html');
 nunjucks.configure('views', {
@@ -46,11 +46,11 @@ app.use(session({
     secure: false,
   },
 }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize()); // 여기서 req.user, req.login, req.isAuthenticate, req.logout 생성
+app.use(passport.session()); // connect.sid라는 이름으로 세션 쿠키가 브라우저로 전송
 
 app.use('/', pageRouter);
-// app.use('/auth', authRouter);
+app.use('/auth', authRouter);
 // app.use('/post', postRouter);
 // app.use('/user', userRouter);
 

@@ -71,6 +71,22 @@ input {
   cursor: pointer;
   transition: background-color .2s;
 }
+.join-form a {
+  display: block;
+  font-size: 1em;
+  color: #38362f;
+  line-height: 1.1;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  background-color: transparent;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.join-form a:hover {
+  color: #37ba79;
+}
 footer {
   position: absolute;
 }
