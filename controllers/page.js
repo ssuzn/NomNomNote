@@ -1,3 +1,11 @@
+exports.renderPost = (req, res, next) => {
+  res.render('post');
+};
+
+exports.renderContact = (req, res, next) => {
+  res.render('contact');
+};
+
 exports.renderProfile = (req, res, next) => {
   res.render('profile');
 };
