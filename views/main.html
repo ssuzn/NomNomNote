@@ -21,7 +21,7 @@
             </div>
           </div>
           <a href="/post">Post</a>
-          <a href="/contacts">Contact</a>
+          <a href="/contact">Contact</a>
         <!--로그인 아닐 시-->
         {% else %}
           <a href="/login">Log in</a>
@@ -45,7 +45,9 @@
   
       <!-- 게시물 카드 섹션 -->
       <section class="user-posts">
-        <div class="post-text">Our Picks</div>
+        <div class="post-text">
+          <a href="/board">MY PICKS &#129046;</a>
+        </div>
         {% if posts.length > 0 %}
           <!-- 최대 4개의 게시물 카드 표시 -->
           {% for post in posts.slice(0, 4) %}

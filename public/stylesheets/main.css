@@ -125,7 +125,18 @@ nav a:hover {
   font-weight: bold;
   margin-top: 4rem;
   margin-bottom: 5rem;
+  color: #282828;
   opacity: .9;
+}
+
+.post-text a {
+  color: #282828;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.post-text a:hover {
+  color: #37ba79
 }
 .post-card {
   flex: 0 0 200px;
