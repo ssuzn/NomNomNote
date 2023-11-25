@@ -1,7 +1,7 @@
 const express = require('express');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const path = require('path');
 const session = require('express-session');
 const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
@@ -10,7 +10,7 @@ const passport = require('passport');
 dotenv.config();
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
-// const postRouter = require('./routes/post');
+const postRouter = require('./routes/post');
 // const userRouter = require('./routes/user');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
@@ -51,8 +51,13 @@ app.use(passport.session()); // connect.sid라는 이름으로 세션 쿠키가 
 
 app.use('/', pageRouter);
 app.use('/auth', authRouter);
-// app.use('/post', postRouter);
+app.use('/post', postRouter);
 // app.use('/user', userRouter);
+
+app.post('/post', (req, res) => {
+  // 이 부분에 게시물을 생성하는 로직을 추가하세요.
+  res.send('게시물이 성공적으로 업로드되었습니다.');
+});
 
 app.use((req, res, next) => { // 404 NOT FOUND
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
