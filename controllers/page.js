@@ -23,7 +23,12 @@ exports.renderPost = (req, res, next) => {
 }
 
 exports.renderContact = (req, res, next) => {
-  res.render('contact');
+  res.render('contact', { message: req.body.message });
+};
+
+exports.handleContactForm = (req, res, next) => {
+  const { name } = req.body;
+  res.redirect(`/contact?message=Thank+you%2C+${name}%2C+for+your+message%21+We%27ll+get+back+to+you+soon.`)
 };
 
 exports.renderProfile = (req, res, next) => {

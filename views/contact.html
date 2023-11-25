@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/stylesheets/contact.css">
+<div class="container">
+  <div class="content">
+    <div class="title">
+      <h2>Tell me anything</h2>
+    </div>
+    <form class="form" action="/contact" method="post">
+      <input name="name" type="text" maxlength="30" placeholder="YOUR NAME*" required>
+      <input name="email"  type="email" maxlength="100" placeholder="YOUR EMAIL*" required>
+      <input name="number" type="number" maxlength="11" placeholder="YOUR PHONE NUMBER*" required>
+      <label for="message">YOUR MESSAGE*</label>
+      <textarea name="message" class="message" required></textarea>
+      <input name="submit" type="submit" class="btn" value="Send">
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const message = urlParams.get('message');
+  
+    if (message) {
+      // 페이지 로딩 후 메시지가 존재하면 팝업을 띄웁니다.
+      alert(message);
+  
+      // 팝업 확인을 누르면 페이지를 리로드하여 초기화합니다.
+      window.location.href = '/contact';
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,76 @@
+.content {
+  width: 500px;
+  position: relative;
+  left: 25px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: .06em;
+  margin-bottom: 60px;
+  opacity: .9;
+}
+
+.form {
+  display: block;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #d4d0c7;
+  color: #282828;
+  padding: 8px 0;
+  margin-bottom: 51px;
+  opacity: .8;
+}
+
+label {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.35em;
+  margin: 8px 0 15px;
+  opacity: .8;
+}
+
+textarea {
+  width: 100%;
+  color: #282828;
+  margin-bottom: 50px;
+  border: none;
+  border: 1px solid #8d8c8c;
+  padding: 8px;
+  resize: none;
+  height: 150px;
+}
+
+input, textarea {
+  box-shadow: none;
+  background: 0 0;
+  outline: 0;
+  font-size: 15px;
+  letter-spacing: .35em;
+  border-radius: 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 800;
+  color: #f1efe9;
+  text-transform: uppercase;
+  background-color: #282828;
+  font-size: 11px;
+  letter-spacing: .1em;
+  padding: 16px 56px 17px;
+  margin: 38px 0;
+  border-radius: 25px;
+  transition: background-color .3s ease;
+  max-width: 100%;
+}
+
+.btn:hover {
+  background-color: #444343;
+}

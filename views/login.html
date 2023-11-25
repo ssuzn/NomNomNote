@@ -2,19 +2,19 @@
 
 {% block content %}
 <link rel="stylesheet" href="/stylesheets/join.css">
-  <div class="join-container">
-    <div class="join-content">
-      <h2 class="join-title">
+  <div class="container">
+    <div class="content">
+      <h2 class="title">
         Log In
       </h2>
-      <form class="join-form" action="/auth/login" method="post">
-        <div class="join-input">
-          <input type="email" name="email" placeholder="EMAIL" minlength="6" required>
+      <form class="form" action="/auth/login" method="post">
+        <div class="input">
+          <input type="email" name="email" placeholder="EMAIL*" minlength="6" required>
         </div>
-        <div class="join-input">
-          <input type="password" name="password" placeholder="PASSWORD" required>
+        <div class="input">
+          <input type="password" name="password" placeholder="PASSWORD*" required>
         </div>
-        <button class="join-btn" type="submit">Log in</button>
+        <button class="btn" type="submit">Log in</button>
       </form>
     </div>
   </div>
