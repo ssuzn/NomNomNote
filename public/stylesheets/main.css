@@ -17,16 +17,12 @@ header {
   z-index: 1;
 }
 
-#wrapper {
+section {
   min-height: 100vh;
   position: relative;
-  width: 100%;
   margin-top: 14rem;
 }
 
-.main {
-  margin-top: 5.5rem;
-}
 .logo {
   padding-left: 20px;
   font-size: 30px;
@@ -211,7 +207,7 @@ footer {
   background-color: #e8e4db;
   color: #333;
   font-weight: 700;
-  position : absolute;
+  position : relative;
   padding-top: 3rem;
   padding-bottom: 3rem;
   text-align: center;
