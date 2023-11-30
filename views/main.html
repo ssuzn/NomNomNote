@@ -16,18 +16,20 @@
           <div class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
             <div class="dropdown-menu" id="dropdownMenu">
-              <a href="/profile">Profile</a>
-              <a href="/auth/logout" onclick="logout()">Logout</a>
+              <a href="/profile">PROFILE</a>
+              <a href="/auth/logout" onclick="logout()">LOGOUT</a>
             </div>
           </div>
-          <a href="/post">Post</a>
-          <a href="/contact">Contact</a>
+          <a href="/board">MY NOTES</a>
+          <a href="/post">NEW POST</a>
+          <a href="/contact">CONTACT</a>
         <!--로그인 아닐 시-->
         {% else %}
-          <a href="/login">Log in</a>
-          <a href="/join">Sign Up</a>
-          <a href="/post">Post</a>
-          <a href="/contact">Contact</a>
+          <a href="/login">LOGIN</a>
+          <a href="/join">SIGN UP</a>
+          <a href="/board">MY NOTES</a>
+          <a href="/post">NEW POST</a>
+          <a href="/contact">CONTACT</a>
         {% endif %}
       </nav>
   </header>
@@ -107,3 +109,29 @@
       </div>
     </footer>
   </div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  window.onload = () => {
+    if (new URL(location.href).searchParams.get('error')) {
+      alert(new URL(location.href).searchParams.get('error'));        }
+  };
+
+  function logout() {
+      // 실제로는 서버 측에서 세션을 만료시키거나 쿠키를 삭제하는 등의 작업이 이루어져야 합니다.
+      // 여기서는 간단히 경고창을 띄우는 예제로 대체합니다.
+    alert("Logged out successfully!");
+  };
+  function showDropdown() {
+    document.getElementById("dropdownMenu").style.display = "block";
+  };
+
+  function hideDropdown() {
+    document.getElementById("dropdownMenu").style.display = "none";
+  };
+
+</script>
+
+</body>
+</html>
+  

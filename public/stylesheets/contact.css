@@ -69,6 +69,7 @@ input, textarea {
   border-radius: 25px;
   transition: background-color .3s ease;
   max-width: 100%;
+  opacity: 1;
 }
 
 .btn:hover {
