@@ -2,7 +2,6 @@ html, body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  /* background-color: #f1efe9; */
   background-color: #fffeec;
 }
 
@@ -29,37 +28,47 @@ section {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #339966;
+  text-shadow: -1px -1px 0 #54433B, 1px -1px 0 #54433B, -1px 1px 0 #54433B, 1px 1px 0 #54433B;
+  color: #54433B;
 }
+
+.logo:hover {
+  color: #ff6c11;
+  transition: 0.3s ease;
+}
+
 nav {
   padding-right: 20px;
   display: flex;
   gap: 20px;
   flex-wrap: nowrap;
 }
+
 nav svg {
   width: 67px;
   height: 28px;
-  fill: #333;
+  fill: #54433B;
 }
+
 nav a, nav svg {
   text-decoration: none;
   font-size: 18px;
-  color: #333;
+  color: #54433B;
   font-weight: 500;
   padding: 5px 10px;
   border-radius: 5px;
   transition: 0.3s ease;
   cursor: pointer;
 }
+
 nav a:hover {
-  color: #37ba79;
+  color: #ff6c11;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #333;
+  background-color: #54433B;
   border-radius: 5px;
   cursor: pointer; 
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -70,6 +79,7 @@ nav a:hover {
   position: relative;
   display: inline-block;
 }
+
 .dropdown-menu a {
   display: block;
   padding: 15px;
@@ -78,8 +88,9 @@ nav a:hover {
   font-size: 18px;
   font-weight: 500;
 }
+
 .dropdown:hover svg {
-  fill: #37ba79
+  fill: #ff6c11;
 }
 
 .introduction {
@@ -90,16 +101,18 @@ nav a:hover {
   align-items: center;
   overflow: hidden;
 }
+
 .introduction img{
   width: 1903px;
   height: 1000px;
   display: block;
 }
+
 .introduction-text {
   flex: 1; 
-  color: #333;
-  font-size: 41px;
-  font-weight: bold;
+  color: #54433B;
+  font-size: 44px;
+  font-weight: 800;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,6 +126,7 @@ nav a:hover {
   position:relative;
   overflow:hidden;
 }
+
 .ani {
   display: inline;
   position: relative;
@@ -126,6 +140,8 @@ nav a:hover {
   animation-timing-function:ease-out;
   animation-delay:0s;
   animation-fill-mode:backwards;
+  color: #ff6c11;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;  
  }
 
  @keyframes intro {
@@ -147,6 +163,8 @@ nav a:hover {
   animation-timing-function:ease-out;
   animation-delay:0.4s;
   animation-fill-mode:backwards;
+  font-size: 42px;
+  font-weight: 600;
 }
 
 .ani3 {
@@ -156,6 +174,9 @@ nav a:hover {
   animation-timing-function:ease-out;
   animation-delay:0.8s;
   animation-fill-mode:backwards;
+  font-size: 26px; 
+  padding-top: 26px; 
+  font-weight: 600;
 }
 
 .introduction-text p {
@@ -173,16 +194,17 @@ nav a:hover {
 
 .feature {
   text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .feature h2 {
-  font-weight: 700;
-  font-size: 49px;
+  font-weight: 800;
+  font-size: 53px;
   line-height: 130%;
-  letter-spacing: -.01em;
-  color: #242424;
+  color: #54433B;
   margin-bottom: 24px;
-  /* animation: revealUp 1.5s forwards ease-in-out; */
+  transition: 0.3s ease;
 }
 
 .card-list {
@@ -203,12 +225,14 @@ nav a:hover {
 
 .card h2 {
   padding: 10px;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .card p {
   padding: 0 10px 10px;
-  font-size: 19px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #54433B;
 }
 
 .card:hover {
@@ -227,18 +251,27 @@ nav a:hover {
 
 .search-bar {
   display: flex;
-  width: 800px;
+  width: 835px;
   align-items: center;
   border: 2px solid #F1F1F1;
   border-radius: 50px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .search-content label {
-  font-size: 33px;
+  font-size: 40px;
   font-weight: 800;
   float: left;
-  padding-right: 55px;
+  padding-right: 80px;
+  color: #54433B;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out;
+}
+
+.search-content label:hover {
+  color: #ff6c11;
+  transform: scale(1.05); 
 }
 
 #search {
@@ -258,8 +291,58 @@ nav a:hover {
   margin-left: 5px;
 }
 
+.note-container {
+  display: block;
+  margin-top: -35rem;
+}
+
+.note-content {
+  text-align: center;
+  padding: 2rem;
+  color: #54433B;
+}
+
+.note-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.note-title span {
+  font-size: 48px;
+  color: #ff6c11;
+}
+
+.note-description {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.oval-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background-color: #ff6c11;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out;
+}
+
+.oval-button:hover {
+  background-color: #DB4E00;
+  transform: scale(1.05); 
+}
+
 footer {
-  /* background-color: #e8e4db; */
   background-color: #fffeec;
   color: #333;
   font-weight: 700;
