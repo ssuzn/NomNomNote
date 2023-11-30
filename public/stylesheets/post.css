@@ -17,16 +17,6 @@ header {
   z-index: 1;
 }
 
-#wrapper {
-  min-height: 100vh;
-  position: relative;
-  width: 100%;
-  margin-top: 14rem;
-}
-
-.main {
-  margin-top: 5.5rem;
-}
 .logo {
   padding-left: 20px;
   font-size: 30px;
