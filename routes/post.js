@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const { afterUploadImage, uploadPost } = require('../controllers/post');
 const { isLoggedIn } = require('../middlewares');
+const { renderPost, handlePostForm } = require('../controllers/page');
 
 const router = express.Router();
 
@@ -29,11 +30,9 @@ const upload = multer({
 });
 
 
-// POST /post/img
+// 이미지 업로드 처리
 router.post('/img', isLoggedIn, upload.single('img'), afterUploadImage);
 
-// POST /post
-const upload2 = multer();
-router.post('/', isLoggedIn, upload2.none(), uploadPost);
+router.post('/', handlePostForm);
 
 module.exports = router;

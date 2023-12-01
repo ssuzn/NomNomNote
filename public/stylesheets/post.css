@@ -1,163 +1,55 @@
-html, body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f1efe9;
-}
-
-header {
-  text-align: left;
-  margin: 39px 0px;
-  position: fixed;
-  width: 100%;
-  top: 0;
+.container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
-
-.logo {
-  padding-left: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #339966;
-}
-nav {
-  padding-right: 20px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: nowrap;
-}
-nav svg {
-  width: 67px;
-  height: 28px;
-  fill: #333;
-}
-nav a, nav svg {
-  text-decoration: none;
-  font-size: 19px;
-  color: #333;
-  font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-nav a:hover {
-  color: #37ba79;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  border-radius: 5px;
-  cursor: pointer; 
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown {
+  text-align: center;
   position: relative;
-  display: inline-block;
-}
-.dropdown-menu a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-}
-.dropdown:hover svg {
-  fill: #37ba79
-}
-
-footer {
-  background-color: #e8e4db;
-  color: #333;
-  font-weight: 700;
-  position : absolute;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  height: 2rem;
-  align-items: center;
-}
-
-.left-content {
-  flex: 1;
-}
-
-.center-content {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-icons {
-  display: flex;
-  gap: 20px;
-}
-
-.social-icons a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 24px;
-}
-
-.right-content {
-  flex: 1;
-}
-
-.post-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  position: absolute;
   left: 0;
   right: 0;
   padding: 44px;
   flex-direction: column;
+  margin-top: -4rem;
+  align-items: center;
 }
 
-.post-title {
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+.content {
+  background-color: #fffeec;
+  border-radius: 8px;
+  width: 800px;
+  padding: 20px 100px;
+  max-width: 100%;
+  margin-bottom: 4rem;
+}
+
+.title {
   font-weight: bold;
   font-size: 2em;
-  margin: 0 0 30px;
-}
-
-#post-form {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 30px;
+  margin-top: -4rem;
+  padding: 1rem;
 }
 
 .image-upload {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+label:hover {
+  background-color: #444343;
 }
 
 .upload-label {
   display: block;
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px;
-  border-radius: 4px;
+  background-color: #282828;
+  text-align: center;
+  border: none;
   cursor: pointer;
+  font-weight: 800;
+  color: #f1efe9;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .1em;
+  padding: 16px 56px 17px;
+  margin-top: 38px;
+  border-radius: 25px;
+  transition: background-color .3s ease;
+  max-width: 100%;
 }
 
 #img {
@@ -170,30 +62,56 @@ footer {
   margin-top: 10px;
 }
 
-input[type="text"],
-select,
-input[type="number"],
-textarea {
+input,
+select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #d4d0c7;
+  color: #282828;
+  padding: 8px 0;
+  margin-bottom: 51px;
+  opacity: .8;
+}
+
+textarea {
+  width: 100%;
+  color: #282828;
+  margin-bottom: 50px;
+  border: none;
+  border: 1px solid #8d8c8c;
+  padding: 8px;
+  resize: none;
+  height: 150px;
+}
+
+input, select, textarea {
+  box-shadow: none;
+  background: 0 0;
+  outline: 0;
+  font-size: 15px;
+  letter-spacing: .35em;
+  border-radius: 0;
 }
 
 button {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-weight: 800;
+  color: #f1efe9;
+  text-transform: uppercase;
+  background-color: #282828;
+  font-size: 11px;
+  letter-spacing: .1em;
+  padding: 16px 56px 17px;
+  border-radius: 25px;
+  transition: background-color .3s ease;
+  max-width: 100%;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #444343;
 }
 
 

@@ -8,8 +8,8 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get('/post', isLoggedIn, renderPost);
-router.get('/contact', isLoggedIn, renderContact);
+router.get('/post', renderPost);
+router.get('/contact', renderContact);
 router.get('/login', isNotLoggedIn, renderLogin);
 router.get('/profile', isLoggedIn, renderProfile); 
 router.get('/join', isNotLoggedIn, renderJoin); 

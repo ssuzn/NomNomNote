@@ -2,38 +2,38 @@
 
 {% block content %}
 <link rel="stylesheet" href="/stylesheets/post.css">
-<div class="post-container">
-  <div class="post-content">
-    <h2 class="post-title">
-      Create a New Post!
-    </h2>
+<div class="container">
+  <h2 class="title">
+    Create a New Post!
+  </h2>
+  <div class="content">
     <main>
-      <form id="post-form" action="/post" method="post" enctype="multipart/form-data">
+      <form class="form" action="/post" method="post" enctype="multipart/form-data">
         <div class="image-upload">
           <label for="img" class="upload-label">
-            <span>Upload Image</span>
+            <span>UPLOAD IMAGE</span>
           </label>
   
           <input type="file" id="img" accept="image/*" onchange="previewImage(event)" required>
           <div class="img-preview">
-            <img id="image-preview" class="image-preview" alt="Image Preview">
+            <img id="image-preview" class="image-preview" alt="IMAGE PREVIEW">
             <input id="img-url" type="hidden" name="url">
           </div>
         </div>
   
         <div class="input-fields">
-          <div class="post-details">
-            <input type="text" placeholder="Restaurant Name" id="restaurant-name" name="restaurantName">
-            <input type="text" placeholder="Location" id="location" name="location">
-            <select id="category" name="category">
-                <option value="restaurant">Restaurant</option>
-                <option value="cafe">Cafe</option>
-                <option value="bar">Bar</option>
+          <div class="details">
+            <input type="text" placeholder="RESTAURANT NAME*" id="restaurant-name" name="restaurantName" required>
+            <input type="text" placeholder="LOCATION*" id="location" name="location" required>
+            <select id="category" name="category" required>
+                <option value="restaurant">RESTAURANT</option>
+                <option value="cafe">CAFE</option>
+                <option value="bar">BAR</option>
             </select>
-            <input type="number" placeholder="Rating (1-5)" id="rating" name="rating" min="1" max="5" step="0.1">
+            <input type="number" placeholder="RATING (1-5)" id="rating" name="rating" min="1" max="5" step="0.1" required>
           </div>
           <div class="post-content">
-            <textarea placeholder="Write your post here..." id="post-content" name="content"></textarea>
+            <textarea placeholder="WRITE YOUR POST HERE..." id="post-content" name="content" required></textarea>
           </div>
         </div>
           
@@ -81,6 +81,17 @@
       preview.src = '';
     }
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const message = urlParams.get('message');
+  
+    if (message) {
+      alert(message);
+      window.location.href = '/post';
+    }
+  });
 </script>
 {% endblock %}
  

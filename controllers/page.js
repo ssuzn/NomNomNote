@@ -19,7 +19,11 @@ const { User, Post } = require('../models');
 // };
 
 exports.renderPost = (req, res, next) => {
-  res.render('post');
+  res.render('post', { message: req.body.message });
+};
+
+exports.handlePostForm = (req, res, next) => {
+  res.redirect(`/post?message=Post successfully created!`)
 };
 
 exports.renderContact = (req, res, next) => {
@@ -45,16 +49,8 @@ exports.renderJoin = (req, res, next) => {
 
 exports.renderMain = async (req, res, next) => {
   try {
-    const posts = await Post.findAll({
-      include: {
-        model: User,
-        attributes: ['id', 'nick'],
-      },
-      order: [['createdAt', 'DESC']],
-    });
     res.render('main', {
-      title: 'NomNomNote',
-      posts: posts,
+      title: 'NomNomNote'
     });
   } catch (err) {
     console.error(err);

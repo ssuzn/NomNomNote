@@ -19,15 +19,6 @@
   text-align: center;
 }
 
-h2 {
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
 .form {
   width: 100%;
   margin-top: 0em;
@@ -88,7 +79,7 @@ input {
 }
 
 .form a:hover {
-  color: #37ba79;
+  color: #ff6c11;
 }
 
 footer {
