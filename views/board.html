@@ -1,3 +1,42 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="/stylesheets/board.css">
+<div class="container">
+  <h2 class="title">Your picks are here!</h2>  
+  <div class="content">
+    {% if notes.length > 0 %}
+      {% for note in notes %}
+        <div class="post-card">
+          <img src="{{ note.img }}" alt="Post Image">
+          <div class="info">
+            <div class="name">{{ note.restaurantName }}</div>
+            <p>Posted on {{ note.createdAt }}</p>
+            <a href="/postDetail/{{ note.id }}">View Details ↗</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No posts available.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const postCards = document.querySelectorAll('.post-card');
+
+    postCards.forEach(function (postCard) {
+      postCard.addEventListener('click', function () {
+        const postId = postCard.dataset.id;
+        window.location.href = `/editPost/${id}`;
+      });
+    });
+  });
+</script>
+{% endblock %}
+
+

@@ -11,8 +11,6 @@
 }
 
 .content {
-  background-color: #fffeec;
-  border-radius: 8px;
   width: 800px;
   padding: 20px 100px;
   max-width: 100%;
@@ -113,5 +111,3 @@ button {
 button:hover {
   background-color: #444343;
 }
-
-

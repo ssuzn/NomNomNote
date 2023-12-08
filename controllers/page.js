@@ -1,29 +1,55 @@
 const { User, Post } = require('../models');
 
-// exports.renderPost = async (req, res, next) => {
-//   try {
-//     const posts = await Post.findAll({
-//       include: {
-//         model: User,
-//         attributes: ['id', 'nick'],
-//       },
-//       order: [['createdAt', 'DESC']],
-//     });
-//     res.render('post', {
-//       notes: posts,
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     next(err);
-//   }
-// };
+exports.renderEditPost = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const posts = await Post.findByPk(id);
+    if (!posts) {
+      return res.status(404).send('Post not found');
+    }
+    res.render('editPost', { title: 'Edit Post', notes: posts });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
+
+exports.renderPostDetail = async (req, res, next) => {
+  const { id } = req.params.id;
+  try {
+    const posts = await Post.findByPk(id);
+    if (!posts) {
+      return res.status(404).send('Post not found');
+    }
+    res.render('postDetail', { title: 'Post Detail', notes: posts });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
+
+
+exports.renderBoard = async (req, res, next) => {
+  try {
+    const posts = await Post.findAll({
+      include: {
+        model: User,
+        attributes: ['id', 'nick'],
+      },
+        order: [['createdAt', 'DESC']], 
+      });
+      res.render('board', { 
+        title: 'Board', 
+        notes: posts,
+    });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
 
 exports.renderPost = (req, res, next) => {
   res.render('post', { message: req.body.message });
-};
-
-exports.handlePostForm = (req, res, next) => {
-  res.redirect(`/post?message=Post successfully created!`)
 };
 
 exports.renderContact = (req, res, next) => {

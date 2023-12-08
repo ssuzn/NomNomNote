@@ -20,6 +20,8 @@ exports.uploadPost = async (req, res, next) => {
       rating: req.body.rating,
       UserId: req.user.id,
     });
+
+    res.redirect('/post?message=Post successfully created!');
     
   } catch (error) {
     console.error(error);

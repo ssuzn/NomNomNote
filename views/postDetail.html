@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/stylesheets/postDetail.css">
+  <div class="title">
+    It's your flavor journey!
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="img">
+        <img src="{{ notes.img }}" alt="Post Image">
+      </div>
+      <div class="info">
+        <div>RESTAURANT NAME: <span>{{ notes.restaurantName }}</span></div>
+        <div>Posted on <span>{{ notes.createdAt }}</span></div>
+        <div>LOCATION: <span>{{ notes.location }}</span></div>
+        <div>CATEGORY: <span>{{ notes.category }}</span></div>
+        <div>RATING: <span>{{ notes.rating }}</span></div>
+        <div>CONTENT: <span>{{ notes.content }}</span></div>
+      </div>
+    </div>
+     
+    
+    <div class="button-container">
+      <a href="/board/{{ notes.id }}/editPost" class="edit-button">Edit</a>
+      <button type="submit" class="delete-button">Delete Post</button>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    document.querySelectorAll('.delete-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        if (confirm('게시글을 삭제하시겠습니까?')) {
+          axios.delete(`/postDetail/{{ notes.id }}`)
+          .then(() => {
+            window.location.href = '/board';
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+        }
+      });
+    });
+
+  </script>
+{% endblock %}

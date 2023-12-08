@@ -12,6 +12,9 @@ const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/post');
 const contactRouter = require('./routes/contact');
+const boardRouter = require('./routes/board');
+const editPostRouter = require('./routes/editPost');
+const postDetailRouter = require('./routes/postDetail');
 // const userRouter = require('./routes/user');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
@@ -54,6 +57,9 @@ app.use('/', pageRouter);
 app.use('/auth', authRouter);
 app.use('/post', postRouter);
 app.use('/contact', contactRouter);
+app.use('/board', boardRouter);
+app.use('/editPost', editPostRouter);
+app.use('/postDetail', postDetailRouter);
 // app.use('/user', userRouter);
 
 app.use((req, res, next) => { // 404 NOT FOUND

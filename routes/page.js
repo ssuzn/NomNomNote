@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
-const { renderBoard, renderPost, renderContact, renderLogin, renderJoin, renderProfile, renderMain } = require('../controllers/page');
+const { renderPostDetail, renderEditPost, renderBoard, renderPost, renderContact, renderLogin, renderJoin, renderProfile, renderMain } = require('../controllers/page');
 
 router.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
 
+router.get('/postDetail', renderPostDetail);
+router.get('/editPost', renderEditPost);
+router.get('/board', renderBoard);
 router.get('/post', renderPost);
 router.get('/contact', renderContact);
 router.get('/login', isNotLoggedIn, renderLogin);
