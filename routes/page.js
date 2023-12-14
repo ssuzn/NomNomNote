@@ -8,10 +8,10 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get('/postDetail', renderPostDetail);
-router.get('/editPost', renderEditPost);
-router.get('/board', renderBoard);
-router.get('/post', renderPost);
+router.get('/postDetail', isLoggedIn, renderPostDetail);
+router.get('/editPost', isLoggedIn, renderEditPost);
+router.get('/board', isLoggedIn, renderBoard);
+router.get('/post', isLoggedIn, renderPost);
 router.get('/contact', renderContact);
 router.get('/login', isNotLoggedIn, renderLogin);
 router.get('/profile', isLoggedIn, renderProfile); 

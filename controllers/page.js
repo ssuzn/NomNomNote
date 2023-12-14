@@ -1,13 +1,12 @@
 const { User, Post } = require('../models');
 
 exports.renderEditPost = async (req, res, next) => {
-  const { id } = req.params;
   try {
     const posts = await Post.findByPk(id);
     if (!posts) {
       return res.status(404).send('Post not found');
     }
-    res.render('editPost', { title: 'Edit Post', notes: posts });
+    res.render('editPost', { title: 'Edit Post', notes: posts, message: req.body.message });
   } catch (error) {
     console.error(error);
     next(error);

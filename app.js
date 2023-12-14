@@ -15,7 +15,6 @@ const contactRouter = require('./routes/contact');
 const boardRouter = require('./routes/board');
 const editPostRouter = require('./routes/editPost');
 const postDetailRouter = require('./routes/postDetail');
-// const userRouter = require('./routes/user');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
 
@@ -58,9 +57,9 @@ app.use('/auth', authRouter);
 app.use('/post', postRouter);
 app.use('/contact', contactRouter);
 app.use('/board', boardRouter);
-app.use('/editPost', editPostRouter);
+app.use('/board', editPostRouter);
 app.use('/postDetail', postDetailRouter);
-// app.use('/user', userRouter);
+
 
 app.use((req, res, next) => { // 404 NOT FOUND
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
