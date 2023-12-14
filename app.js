@@ -6,8 +6,16 @@ const session = require('express-session');
 const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
 const passport = require('passport');
+const redis = require('redis');
+const RedisStore = require('connect-redis').default;
 
 dotenv.config();
+const redisClient = redis.createClient({
+  url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
+  password: process.env.REDIS_PASSWORD,
+  legacyMode: false,
+});
+redisClient.connect().catch(console.error);
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/post');
@@ -48,6 +56,7 @@ app.use(session({
     httpOnly: true,
     secure: false,
   },
+  store: new RedisStore({ client: redisClient }),
 }));
 app.use(passport.initialize()); // 여기서 req.user, req.login, req.isAuthenticate, req.logout 생성
 app.use(passport.session()); // connect.sid라는 이름으로 세션 쿠키가 브라우저로 전송
